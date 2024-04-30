@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { TodosRoutes } from "./todos/routes";
-import { TodosRoutesPostgres } from "./todosPostrgres/routes";
+import { TodosRoutesPostgres } from "./todos-postgres/routes";
 
 export class AppRoutes {
   static get routes(): Router {
@@ -8,7 +8,7 @@ export class AppRoutes {
 
     router.use("/api/todos", TodosRoutes.routes);
 
-    router.use("/api/todosP", TodosRoutesPostgres.routes);
+    router.use("/api/todospost", TodosRoutesPostgres.routes);
 
     return router;
   }
