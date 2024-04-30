@@ -22,7 +22,7 @@ export class TodoControllerPostgres {
 
       return response.send(todo);
     } catch (error) {
-      return response.status(400).send({ error });
+      return response.status(404).send({ error });
     }
   };
 
@@ -33,7 +33,7 @@ export class TodoControllerPostgres {
 
     const newTodo = await this.todoRepository.create(createDto!);
 
-    return response.status(200).send(newTodo);
+    return response.status(201).send(newTodo);
   };
 
   public updateTodo = async (request: Request, response: Response) => {

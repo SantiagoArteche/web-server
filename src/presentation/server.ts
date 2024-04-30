@@ -5,7 +5,7 @@ interface Options {
 }
 
 export class Server {
-  private app = express();
+  public readonly app = express();
   private readonly port = process.env.PORT ?? 8080;
   private readonly routes: Router;
 

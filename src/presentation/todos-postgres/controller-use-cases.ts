@@ -26,7 +26,7 @@ export class TodoControllerPostgresUseCases {
     new GetTodo(this.todoRepository)
       .execute(id)
       .then((todo) => response.status(200).send(todo))
-      .catch((error) => response.status(400).send({ error }));
+      .catch((error) => response.status(404).send({ error }));
   };
 
   public createTodo = (request: Request, response: Response) => {
@@ -36,7 +36,7 @@ export class TodoControllerPostgresUseCases {
 
     new CreateTodo(this.todoRepository)
       .execute(createDto!)
-      .then((todo) => response.status(200).send(todo))
+      .then((todo) => response.status(201).send(todo))
       .catch((error) => response.status(400).send({ error }));
   };
 

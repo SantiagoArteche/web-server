@@ -5,3 +5,5 @@ build/
 keys/
 .env
 /postgres
+/coverage
+/postgres-test

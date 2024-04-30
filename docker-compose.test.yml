@@ -1,0 +1,12 @@
+services:
+  postgres-db-test:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME_TEST}
+      POSTGRES_USER: ${DB_USER_NAME_TEST}
+      POSTGRES_PASSWORD: ${DB_PASS_TEST}
+    volumes:
+      - ./postgres-test:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
